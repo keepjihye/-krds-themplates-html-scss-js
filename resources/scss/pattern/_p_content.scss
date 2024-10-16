@@ -1,17 +1,39 @@
 // 사이트 컨텐츠 내용
 :root {
-    --swiper-theme-color: #fdfdfd;
+    --swiper-theme-color: #ff6e6e;
+}
+
+#skip-nav,
+#header {
+    display: none;
 }
 
 .swiper {
     width: 100%;
     height: 100%;
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+        display: none;
+    }
+    .swiper-button-next::before,
+    .swiper-button-prev::before {
+        font-family: "Line Awesome Free";
+        font-weight: 900;
+        font-size: 4rem;
+        color: $black;
+        opacity: 0.3;
+    }
+    .swiper-button-prev::before {
+        content: "\f137";
+    }
+    .swiper-button-next::before {
+        content: "\f138";
+    }
 }
 
 .swiper-slide {
     text-align: center;
-    font-size: 18px;
-    background: #fff;
+    background: $white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,4 +44,154 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: 50% 100%;
+}
+
+.slide-intro {
+    .swiper-slide {
+        position: relative;
+        img {
+            height: 50vh;
+        }
+        .text-area {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 600px;
+            // 부모 이름 생략하기
+            &__tit {
+                color: $gray-90;
+                font-size: 3rem;
+            }
+            .text-area__cont {
+                color: $gray-70;
+            }
+            .text-area__goto {
+                display: inline-block;
+                margin-top: 20px;
+                border-radius: 10px;
+                padding: 10px 20px;
+                background: $primary;
+                color: $white;
+            }
+        }
+    }
+    .swiper-pagination {
+        display: none;
+    }
+}
+
+// 타블렛
+@media screen and (min-width: 600px) {
+    #leftsidebar {
+        width: 200px;
+        float: left;
+    }
+    #main {
+        margin-left: 216px;
+    }
+    .slide-intro .swiper-slide img {
+        height: 70vh;
+    }
+}
+
+// 데스크탑 버전
+@media screen and (min-width: 1024px) {
+    #leftsidebar {
+        width: 200px;
+        float: left;
+    }
+    #main {
+        margin-left: 216px;
+    }
+    .slide-intro {
+        .swiper-pagination {
+            display: block;
+        }
+        .swiper-button-next,
+        .swiper-button-prev {
+            display: none;
+        }
+    }
+    .slide-intro .swiper-slide .text-area {
+        width: 100%;
+        max-width: none;
+        text-align: left;
+        &__tit {
+            font-size: 6rem;
+        }
+        .text-area__cont {
+            font-size: 2.5rem;
+        }
+        .text-area__goto {
+            margin-top: 30px;
+        }
+    }
+
+    .slide-intro .swiper-slide img {
+        height: 100vh;
+    }
+}
+
+.sec-g {
+    padding: 10vw 0;
+    &__tit {
+        padding-bottom: 2.34375vw;
+        font-size: 4.8rem;
+    }
+    &__more {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        position: absolute;
+        top: 17px;
+        right: 30px;
+        font-size: 2rem;
+        &::after {
+            content: "\f061";
+            font-family: "Line Awesome Free";
+            font-weight: 900;
+            font-size: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background: $gray-20;
+            border-radius: 50%;
+        }
+    }
+    .swiper-slide {
+        a {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+        strong {
+            margin-top: 20px;
+        }
+    }
+}
+
+.inner {
+    position: relative;
+}
+
+.slide-studio {
+    overflow: visible;
+    width: 80%;
+    margin-left: 0;
+    @include mobileMore {
+        width: 90%;
+    }
+    @include tabletMore {
+        margin-left: auto;
+        width: 100%;
+    }
+
+    .swiper-pagination {
+        display: none;
+        // bottom: -50px;
+    }
 }

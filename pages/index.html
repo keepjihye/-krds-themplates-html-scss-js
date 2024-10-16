@@ -17,10 +17,12 @@
     <meta name="twitter:domain" content="사이트 명">
     <!-- 파비콘 -->
     <link rel="shortcut icon" href="http://www.mysite.com/favicon.ico">
-
-    <!-- css -->
     <!-- swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- line awesome -->
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <!-- css -->
     <link rel="stylesheet" href="../resources/css/style.css">
 
     <!-- js -->
@@ -35,7 +37,13 @@
     </div>
 
     <div id="wrap">
-        <header id="header">header</header>
+        <header id="header">
+            <h1>
+                <a href="#">logo</a>
+            </h1>
+            <nav>nav</nav>
+            <div class="util">util</div>
+        </header>
         <div class="slide">
             <!-- Slider main container -->
             <div class="swiper slide-intro">
@@ -44,22 +52,43 @@
                     <!-- Slides -->
                     <div class="swiper-slide">
                         <a href="#">
-                            <img src="https://images.unsplash.com/photo-1728862520441-c7cd3d6e2cdc?q=80&w=2944&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                alt="img1">
+                            <picture>
+                                <source
+                                    srcset="https://images.unsplash.com/photo-1573865526739-10659fec78a5?q=80&w=2815&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                    media="(max-width: 600px)">
+                                <source
+                                    srcset="https://images.unsplash.com/photo-1516139008210-96e45dccd83b?q=80&w=2960&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                    media="(max-width: 1024px)">
+                                <img src="https://images.unsplash.com/photo-1515002246390-7bf7e8f87b54?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                    alt="cat" style="width:auto;">
+                            </picture>
+                            <div class="text-area">
+                                <div class="inner">
+                                    <strong class="text-area__tit">슬라이드 제목</strong>
+                                    <p class="text-area__cont">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil facere fugiat
+                                        omnis
+                                        dignissimos.
+                                    </p>
+                                    <span class="text-area__goto text-area__goto--hidden">바로가기</span>
+                                </div>
+                            </div>
                         </a>
                     </div>
                     <div class="swiper-slide">
                         <a href="#">
-                            <img src="https://images.unsplash.com/photo-1728914976680-e3918de92cfd?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            <img src="https://images.unsplash.com/photo-1495360010541-f48722b34f7d?q=80&w=2836&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                 alt="img2">
                         </a>
+
                     </div>
                     <div class="swiper-slide">
                         <a href="#">
-                            <img src="https://images.unsplash.com/photo-1728794371271-501a846645be?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            <img src="https://images.unsplash.com/photo-1503777119540-ce54b422baff?q=80&w=2786&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                 alt="img3">
                         </a>
                     </div>
+
                 </div>
                 <!-- If we need pagination -->
                 <div class="swiper-pagination"></div>
@@ -68,11 +97,105 @@
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
 
-                <!-- If we need scrollbar -->
-                <div class="swiper-scrollbar"></div>
             </div>
         </div>
-        <main id="container">content</main>
+        <main id="container">
+            <!-- 스튜디오 섹션 -->
+            <section class="sec-g sec-studio">
+                <div class="inner">
+                    <h2 class="sec-g__tit">섹션타이틀</h2>
+                    <div class="sec-g__cont">
+                        <div class="swiper slide-studio">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <a href="#">
+                                        <img src="https://www.wooriam.kr/upload/public/board/LnMCTNmG6JaCGQHJ/tb5eAihFnIe9tAmJ.jpg"
+                                            alt="">
+                                        <strong>너무 쉽다! '이것만' 하면 미국 공모주 투자 끝! | 우리 정말 쉬운 미국공모주 펀드💵</strong>
+                                        <em>2024.10.16</em>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#">
+                                        <img src="https://www.wooriam.kr/upload/public/board/LnMCTNmG6JaCGQHJ/tb5eAihFnIe9tAmJ.jpg"
+                                            alt="">
+                                        <strong>너무 쉽다! '이것만' 하면 미국 공모주 투자 끝! | 우리 정말 쉬운 미국공모주 펀드💵</strong>
+                                        <em>2024.10.16</em>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#">
+                                        <img src="https://www.wooriam.kr/upload/public/board/LnMCTNmG6JaCGQHJ/tb5eAihFnIe9tAmJ.jpg"
+                                            alt="">
+                                        <strong>너무 쉽다! '이것만' 하면 미국 공모주 투자 끝! | 우리 정말 쉬운 미국공모주 펀드💵</strong>
+                                        <em>2024.10.16</em>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#">
+                                        <img src="https://www.wooriam.kr/upload/public/board/LnMCTNmG6JaCGQHJ/tb5eAihFnIe9tAmJ.jpg"
+                                            alt="">
+                                        <strong>너무 쉽다! '이것만' 하면 미국 공모주 투자 끝! | 우리 정말 쉬운 미국공모주 펀드💵</strong>
+                                        <em>2024.10.16</em>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#">
+                                        <img src="https://www.wooriam.kr/upload/public/board/LnMCTNmG6JaCGQHJ/tb5eAihFnIe9tAmJ.jpg"
+                                            alt="">
+                                        <strong>너무 쉽다! '이것만' 하면 미국 공모주 투자 끝! | 우리 정말 쉬운 미국공모주 펀드💵</strong>
+                                        <em>2024.10.16</em>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#">
+                                        <img src="https://www.wooriam.kr/upload/public/board/LnMCTNmG6JaCGQHJ/tb5eAihFnIe9tAmJ.jpg"
+                                            alt="">
+                                        <strong>너무 쉽다! '이것만' 하면 미국 공모주 투자 끝! | 우리 정말 쉬운 미국공모주 펀드💵</strong>
+                                        <em>2024.10.16</em>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#">
+                                        <img src="https://www.wooriam.kr/upload/public/board/LnMCTNmG6JaCGQHJ/tb5eAihFnIe9tAmJ.jpg"
+                                            alt="">
+                                        <strong>너무 쉽다! '이것만' 하면 미국 공모주 투자 끝! | 우리 정말 쉬운 미국공모주 펀드💵</strong>
+                                        <em>2024.10.16</em>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                    <a href="#" class="sec-g__more">더보기</a>
+                </div>
+            </section>
+            <!-- 뉴스 섹션 -->
+            <section class="sec-g sec-news bg-gray">
+                <div class="inner">
+                    <h2 class="sec-g__tit">섹션타이틀</h2>
+                    <div class="sec-g__cont">컨텐츠</div>
+                    <a href="#" class="sec-g__more">더보기</a>
+                </div>
+            </section>
+            <!-- 뉴스 섹션 -->
+            <section class="sec-g sec-news">
+                <div class="inner">
+                    <h2 class="sec-g__tit">섹션타이틀</h2>
+                    <div class="sec-g__cont">컨텐츠</div>
+                    <a href="#" class="sec-g__more">더보기</a>
+                </div>
+            </section>
+            <!-- 뉴스 섹션 -->
+            <section class="sec-g sec-news bg-gray">
+                <div class="inner">
+                    <h2 class="sec-g__tit">섹션타이틀</h2>
+                    <div class="sec-g__cont">컨텐츠</div>
+                    <a href="#" class="sec-g__more">더보기</a>
+                </div>
+            </section>
+
+        </main>
         <footer id="footer">footer</footer>
     </div>
 
@@ -101,7 +224,28 @@
             //     },
             // },
         });
+        var swiper = new Swiper(".slide-studio", {
+            // 모바일기준 1개
+            slidesPerView: 1,
+            spaceBetween: 20,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 50,
+                },
+            },
+        });
     </script>
 </body>
 
 </html>
+
+<!-- test -->

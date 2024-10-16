@@ -1,2 +1,23 @@
 // 사이트 레이아웃 관련 요소들
 // wrap, header ..
+
+// 그리드역할
+.inner {
+    width: 100%;
+    max-width: $grid;
+    // content를 1280px로 만들기 위함
+    padding: 0 $p-mobile;
+    margin: 0 auto;
+    @include tablet {
+        padding: 0 $p-tablet;
+    }
+}
+
+// section layout
+.sec-g {
+    padding: 10vw 0;
+}
+
+.bg-gray {
+    background-color: $gray-10;
+}
