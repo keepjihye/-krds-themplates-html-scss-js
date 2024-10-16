@@ -1,6 +1,6 @@
-#📂 src/
-#├── 📂 pages/                       # 페이지 HTML 파일들
-#│   └── index.html                  # 메인 페이지 HTML 파일
+📂 src/
+├── 📂 pages/                       # 페이지 HTML 파일들
+│   └── index.html                  # 메인 페이지 HTML 파일
 │   └── sub_02.html                  # 서브 페이지 HTML 파일
 ├── 📂 resources/                   # 리소스 폴더
 │   ├── 📂 css/                     # 전역 CSS 파일들
