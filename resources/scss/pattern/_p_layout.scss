@@ -21,3 +21,291 @@
 .bg-gray {
     background-color: $gray-10;
 }
+
+#skip-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    width: 100%;
+    text-align: center;
+    background-color: $gray-90;
+    a {
+        &:not(:focus) {
+            @include sr-only;
+        }
+        &:focus {
+            @include flex-layout($ai: center, $jc: center);
+            @include focus($color: $white, $alpha: 0.9);
+            font-size: 1.5rem;
+            color: $white;
+            width: 100%;
+            height: 3.2rem;
+            margin: 0 auto;
+            text-align: center;
+        }
+    }
+    &.type1 {
+        background-color: $white;
+        a {
+            &:focus {
+                color: $gray-90;
+            }
+        }
+    }
+}
+
+// header
+#header {
+    &.active {
+        .gnb__depth2 {
+            display: block;
+        }
+        &::before {
+            display: block;
+        }
+    }
+    // depth2를 보이기 위함 position이 있어야 올라옴
+    position: relative;
+    z-index: 1000;
+    background-color: $white;
+    // 헤더 고정하기
+    // position: fixed;
+    // top: 0;
+    // left: 0;
+    // right: 0;
+    .inner {
+        display: flex;
+        justify-content: space-between;
+        max-width: none;
+        align-items: center;
+        height: 73px;
+        @include tabletMore {
+            // 102px
+            height: auto;
+        }
+    }
+    #logo {
+        a {
+            // transform-origin:x축 y축;
+            transform: scale(0.8);
+            transform-origin: 0 50%;
+            margin-top: 15px;
+            width: 160px;
+            height: 51px;
+            display: block;
+            // 순서 잘못되면 안먹힘
+            background: url(../../../resources/images/pattern/common/logo.png) no-repeat 0 0;
+            background-size: contain;
+            transform: scale(0.8);
+            @include tabletMore {
+                width: 200px;
+                transform: none;
+                transform-origin: 0;
+            }
+        }
+        span {
+            @include sr-only;
+        }
+    }
+    // nav depth2 뒷배경
+    &::before {
+        display: none;
+        content: "";
+        position: absolute;
+        top: 102px;
+        left: 0;
+        width: 100%;
+        height: 210px;
+        background-color: $gray-10;
+    }
+}
+
+// nav
+#gnb {
+    display: none;
+    // 데스크탑에서 보이게
+    @include tabletMore {
+        display: block;
+    }
+    .gnb__depth1 {
+        display: flex;
+        > li {
+            &:hover {
+                > a span::after {
+                    width: 100%;
+                }
+            }
+            > a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 102px;
+                padding: 0 4vw;
+                font-size: 2rem;
+                font-weight: bold;
+                color: $gray-70;
+                span {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    height: 100%;
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        width: 0%;
+                        height: 3px;
+                        bottom: 0;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        background-color: $primary;
+                        transition: all 1s;
+                    }
+                }
+            }
+        }
+        // > li > a:hover > span::after {
+        //     content: "";
+        //     height: 100%;
+        //     border-bottom: 1px solid $primary;
+        //     width: 100%;
+        //     bottom: 0;
+        //     left: 0;
+        // }
+
+        > li {
+            position: relative;
+            &:first-child {
+                // 테두리 그리기
+                .gnb__depth2 {
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                        width: 2px;
+                        background-color: $gray-20;
+                    }
+                }
+            }
+        }
+    }
+    .gnb__depth2 {
+        display: none;
+        background: $gray-10;
+        position: absolute;
+        top: 102px;
+        left: 0;
+        width: 100%;
+        padding: 20px 0;
+        // 테두리 그리기
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 2px;
+            background-color: $gray-20;
+        }
+        a {
+            display: block;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            padding: 10px 0;
+            color: $gray-70;
+        }
+
+        a:hover {
+            color: $gray-90;
+            font-weight: $font-weight-bolder;
+        }
+
+        li {
+            text-align: center;
+        }
+    }
+}
+
+// util
+.util {
+    display: flex;
+    gap: 15px;
+    .lang {
+        display: none;
+        position: relative;
+        @include tabletMore {
+            display: block;
+        }
+        .lang__btn {
+            text-transform: uppercase;
+            height: 57px;
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+        &::after {
+            content: "\f107";
+            @include lineAwesome;
+            margin-left: 5px;
+            color: $gray-50;
+        }
+        &__lst {
+            display: none;
+            position: absolute;
+            text-transform: uppercase;
+            top: 52px;
+            right: 0;
+            left: 0;
+            width: 100%;
+            padding: 5px 0;
+            background-color: $gray-70;
+            color: $white;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 10px $gray-60;
+        }
+    }
+    .search {
+        transform: scaleX(-1);
+        &::before {
+            content: "\f002";
+            @include lineAwesome;
+            font-size: 3rem;
+            // 이미지 뒤집기
+        }
+    }
+    .all_menu {
+        &::before {
+            content: "\f0c9";
+            @include lineAwesome;
+            font-size: 3rem;
+        }
+    }
+}
+
+#nav-all {
+    padding: $p-mobile;
+    @include tabletMore {
+        padding: $p-tablet;
+    }
+    z-index: 5000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($color: $white, $alpha: 0.9);
+    // 뒷배경 블러처리하기
+    backdrop-filter: blur(10px);
+
+    .close {
+        &::after {
+            content: "\f057";
+            @include lineAwesome;
+            font-size: 4rem;
+        }
+    }
+}

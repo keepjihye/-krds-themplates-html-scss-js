@@ -37,12 +37,134 @@
     </div>
 
     <div id="wrap">
+        <!-- active 추가시 depth2 활성화 -->
         <header id="header">
-            <h1>
-                <a href="#">logo</a>
-            </h1>
-            <nav>nav</nav>
-            <div class="util">util</div>
+            <!-- 그리드 맞춰야 하니까 inner넣어야함 -->
+            <div class="inner">
+                <h1 id="logo">
+                    <a href="#">
+                        <!-- 글은 안보이고 로고 이미지만 보이게 만들기 -->
+                        <span>header_logo</span>
+                    </a>
+                </h1>
+                <nav id="gnb">
+                    <ul class="gnb__depth1">
+                        <li>
+                            <a href="#">
+                                <span>Menu1</span>
+                            </a>
+                            <ul class="gnb__depth2">
+                                <li><a href="#">Menu1-1</a></li>
+                                <li><a href="#">Menu1-2</a></li>
+                                <li><a href="#">Menu1-3</a></li>
+                                <li><a href="#">Menu1-4</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span>Menu2</span>
+                            </a>
+                            <ul class="gnb__depth2">
+                                <li><a href="#">Menu2-1</a></li>
+                                <li><a href="#">Menu2-2</a></li>
+                                <li><a href="#">Menu2-3</a></li>
+                                <li><a href="#">Menu2-4</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span>Menu3</span>
+                            </a>
+                            <ul class="gnb__depth2">
+                                <li><a href="#">Menu3-1</a></li>
+                                <li><a href="#">Menu3-2</a></li>
+                                <li><a href="#">Menu3-3</a></li>
+                                <li><a href="#">Menu3-4</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span>Menu4</span>
+                            </a>
+                            <ul class="gnb__depth2">
+                                <li><a href="#">Menu4-1</a></li>
+                                <li><a href="#">Menu4-2</a></li>
+                                <li><a href="#">Menu4-3</a></li>
+                                <li><a href="#">Menu4-4</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="util">
+                    <!-- active시 드롭다운 활성화 -->
+                    <div class="lang active">
+                        <button class="lang__btn">kor</button>
+                        <ul class="lang__lst">
+                            <li>kor</li>
+                            <li>eng</li>
+                        </ul>
+                    </div>
+                    <button class="search">
+                        <span class="blind">검색</span>
+                    </button>
+                    <button class="all_menu">
+                        <span class="blind">전체메뉴</span>
+                    </button>
+                </div>
+            </div>
+            <!-- 전체메뉴보기 -->
+            <nav id="nav-all">
+                <ul class="gnb__depth1">
+                    <li>
+                        <a href="#">
+                            <span>Menu1</span>
+                        </a>
+                        <ul class="gnb__depth2">
+                            <li><a href="#">Menu1-1</a></li>
+                            <li><a href="#">Menu1-2</a></li>
+                            <li><a href="#">Menu1-3</a></li>
+                            <li><a href="#">Menu1-4</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>Menu2</span>
+                        </a>
+                        <ul class="gnb__depth2">
+                            <li><a href="#">Menu2-1</a></li>
+                            <li><a href="#">Menu2-2</a></li>
+                            <li><a href="#">Menu2-3</a></li>
+                            <li><a href="#">Menu2-4</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>Menu3</span>
+                        </a>
+                        <ul class="gnb__depth2">
+                            <li><a href="#">Menu3-1</a></li>
+                            <li><a href="#">Menu3-2</a></li>
+                            <li><a href="#">Menu3-3</a></li>
+                            <li><a href="#">Menu3-4</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>Menu4</span>
+                        </a>
+                        <ul class="gnb__depth2">
+                            <li><a href="#">Menu4-1</a></li>
+                            <li><a href="#">Menu4-2</a></li>
+                            <li><a href="#">Menu4-3</a></li>
+                            <li><a href="#">Menu4-4</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <button class="close">
+                    <span class="blind">전체메뉴 닫기</span>
+                </button>
+            </nav>
+
         </header>
         <div class="slide">
             <!-- Slider main container -->
@@ -64,7 +186,7 @@
                             </picture>
                             <div class="text-area">
                                 <div class="inner">
-                                    <strong class="text-area__tit">슬라이드 제목</strong>
+                                    <strong class="text-area__tit">슬라이드 1</strong>
                                     <p class="text-area__cont">
                                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil facere fugiat
                                         omnis
@@ -79,6 +201,17 @@
                         <a href="#">
                             <img src="https://images.unsplash.com/photo-1495360010541-f48722b34f7d?q=80&w=2836&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                 alt="img2">
+                            <div class="text-area">
+                                <div class="inner">
+                                    <strong class="text-area__tit">슬라이드 2</strong>
+                                    <p class="text-area__cont">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil facere fugiat
+                                        omnis
+                                        dignissimos.
+                                    </p>
+                                    <span class="text-area__goto text-area__goto--hidden">바로가기</span>
+                                </div>
+                            </div>
                         </a>
 
                     </div>
@@ -86,6 +219,18 @@
                         <a href="#">
                             <img src="https://images.unsplash.com/photo-1503777119540-ce54b422baff?q=80&w=2786&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                 alt="img3">
+                            <div class="text-area">
+                                <div class="inner">
+                                    <strong class="text-area__tit">슬라이드 3</strong>
+                                    <p class="text-area__cont">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil facere fugiat
+                                        omnis
+                                        dignissimos.
+                                    </p>
+                                    <span class="text-area__goto text-area__goto--hidden">바로가기</span>
+                                </div>
+
+                            </div>
                         </a>
                     </div>
 
@@ -103,7 +248,7 @@
             <!-- 스튜디오 섹션 -->
             <section class="sec-g sec-studio">
                 <div class="inner">
-                    <h2 class="sec-g__tit">섹션타이틀</h2>
+                    <h2 class="sec-g__tit">스튜디오</h2>
                     <div class="sec-g__cont">
                         <div class="swiper slide-studio">
                             <div class="swiper-wrapper">
@@ -203,8 +348,9 @@
         var swiper = new Swiper(".slide-intro", {
             slidesPerView: 1,
             spaceBetween: 10,
+            effect: "fade",
             loop: true,
-            // autoplay: true,
+            autoplay: true,
             pagination: {
                 el: ".swiper-pagination",
                 clickable: true,
@@ -247,5 +393,3 @@
 </body>
 
 </html>
-
-<!-- test -->

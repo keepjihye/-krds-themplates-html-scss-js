@@ -1,11 +1,6 @@
 // 사이트 컨텐츠 내용
 :root {
-    --swiper-theme-color: #ff6e6e;
-}
-
-#skip-nav,
-#header {
-    display: none;
+    --swiper-theme-color: #000000;
 }
 
 .swiper {
@@ -17,8 +12,7 @@
     }
     .swiper-button-next::before,
     .swiper-button-prev::before {
-        font-family: "Line Awesome Free";
-        font-weight: 900;
+        @include lineAwesome;
         font-size: 4rem;
         color: $black;
         opacity: 0.3;
@@ -53,12 +47,24 @@
         img {
             height: 50vh;
         }
+
+        &.swiper-slide-active {
+            .text-area {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+
         .text-area {
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translate(-20%, -50%);
             max-width: 600px;
+            opacity: 0;
+            // transition : 뭘바꿀지 몇초동안할지
+            transition: all 1s;
+
             // 부모 이름 생략하기
             &__tit {
                 color: $gray-90;
@@ -146,8 +152,11 @@
         gap: 10px;
         position: absolute;
         top: 17px;
-        right: 30px;
+        right: $p-mobile;
         font-size: 2rem;
+        @include mobileMore {
+            right: $p-tablet;
+        }
         &::after {
             content: "\f061";
             font-family: "Line Awesome Free";

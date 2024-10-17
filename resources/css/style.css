@@ -3188,13 +3188,281 @@ input[type=checkbox] {
   background-color: #f0f0f0;
 }
 
-:root {
-  --swiper-theme-color: #ff6e6e;
+#skip-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  width: 100%;
+  text-align: center;
+  background-color: #1d1d1d;
+}
+#skip-nav a:not(:focus) {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+#skip-nav a:focus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  outline-offset: -0.4rem;
+  outline: 2px solid rgba(255, 255, 255, 0.9);
+  font-size: 1.5rem;
+  color: #fff;
+  width: 100%;
+  height: 3.2rem;
+  margin: 0 auto;
+  text-align: center;
+}
+#skip-nav.type1 {
+  background-color: #fff;
+}
+#skip-nav.type1 a:focus {
+  color: #1d1d1d;
 }
 
-#skip-nav,
 #header {
+  position: relative;
+  z-index: 1000;
+  background-color: #fff;
+}
+#header.active .gnb__depth2 {
+  display: block;
+}
+#header.active::before {
+  display: block;
+}
+#header .inner {
+  display: flex;
+  justify-content: space-between;
+  max-width: none;
+  align-items: center;
+  height: 73px;
+}
+@media (min-width: 1024px) {
+  #header .inner {
+    height: auto;
+  }
+}
+#header #logo a {
+  transform: scale(0.8);
+  transform-origin: 0 50%;
+  margin-top: 15px;
+  width: 160px;
+  height: 51px;
+  display: block;
+  background: url(../../../resources/images/pattern/common/logo.png) no-repeat 0 0;
+  background-size: contain;
+  transform: scale(0.8);
+}
+@media (min-width: 1024px) {
+  #header #logo a {
+    width: 200px;
+    transform: none;
+    transform-origin: 0;
+  }
+}
+#header #logo span {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+#header::before {
   display: none;
+  content: "";
+  position: absolute;
+  top: 102px;
+  left: 0;
+  width: 100%;
+  height: 210px;
+  background-color: #f0f0f0;
+}
+
+#gnb {
+  display: none;
+}
+@media (min-width: 1024px) {
+  #gnb {
+    display: block;
+  }
+}
+#gnb .gnb__depth1 {
+  display: flex;
+}
+#gnb .gnb__depth1 > li:hover > a span::after {
+  width: 100%;
+}
+#gnb .gnb__depth1 > li > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 102px;
+  padding: 0 4vw;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #555555;
+}
+#gnb .gnb__depth1 > li > a span {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+#gnb .gnb__depth1 > li > a span::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #246beb;
+  transition: all 1s;
+}
+#gnb .gnb__depth1 > li {
+  position: relative;
+}
+#gnb .gnb__depth1 > li:first-child .gnb__depth2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 2px;
+  background-color: #e4e4e4;
+}
+#gnb .gnb__depth2 {
+  display: none;
+  background: #f0f0f0;
+  position: absolute;
+  top: 102px;
+  left: 0;
+  width: 100%;
+  padding: 20px 0;
+}
+#gnb .gnb__depth2::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 2px;
+  background-color: #e4e4e4;
+}
+#gnb .gnb__depth2 a {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  padding: 10px 0;
+  color: #555555;
+}
+#gnb .gnb__depth2 a:hover {
+  color: #1d1d1d;
+  font-weight: 800;
+}
+#gnb .gnb__depth2 li {
+  text-align: center;
+}
+
+.util {
+  display: flex;
+  gap: 15px;
+}
+.util .lang {
+  display: none;
+  position: relative;
+}
+@media (min-width: 1024px) {
+  .util .lang {
+    display: block;
+  }
+}
+.util .lang .lang__btn {
+  text-transform: uppercase;
+  height: 57px;
+  margin-right: 10px;
+  font-size: 2rem;
+}
+.util .lang::after {
+  content: "\f107";
+  font-family: "Line Awesome Free";
+  font-weight: 900;
+  margin-left: 5px;
+  color: #8e8e8e;
+}
+.util .lang__lst {
+  display: none;
+  position: absolute;
+  text-transform: uppercase;
+  top: 52px;
+  right: 0;
+  left: 0;
+  width: 100%;
+  padding: 5px 0;
+  background-color: #555555;
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #717171;
+}
+.util .search {
+  transform: scaleX(-1);
+}
+.util .search::before {
+  content: "\f002";
+  font-family: "Line Awesome Free";
+  font-weight: 900;
+  font-size: 3rem;
+}
+.util .all_menu::before {
+  content: "\f0c9";
+  font-family: "Line Awesome Free";
+  font-weight: 900;
+  font-size: 3rem;
+}
+
+#nav-all {
+  padding: 20px;
+  z-index: 5000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+@media (min-width: 1024px) {
+  #nav-all {
+    padding: 30px;
+  }
+}
+#nav-all .close::after {
+  content: "\f057";
+  font-family: "Line Awesome Free";
+  font-weight: 900;
+  font-size: 4rem;
+}
+
+:root {
+  --swiper-theme-color: #000000;
 }
 
 .swiper {
@@ -3244,12 +3512,18 @@ input[type=checkbox] {
 .slide-intro .swiper-slide img {
   height: 50vh;
 }
+.slide-intro .swiper-slide.swiper-slide-active .text-area {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
 .slide-intro .swiper-slide .text-area {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-20%, -50%);
   max-width: 600px;
+  opacity: 0;
+  transition: all 1s;
 }
 .slide-intro .swiper-slide .text-area__tit {
   color: #1d1d1d;
@@ -3328,8 +3602,13 @@ input[type=checkbox] {
   gap: 10px;
   position: absolute;
   top: 17px;
-  right: 30px;
+  right: 20px;
   font-size: 2rem;
+}
+@media (min-width: 600px) {
+  .sec-g__more {
+    right: 30px;
+  }
 }
 .sec-g__more::after {
   content: "\f061";
