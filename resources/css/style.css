@@ -3398,7 +3398,7 @@ input[type=checkbox] {
   margin-right: 10px;
   font-size: 2rem;
 }
-.util .lang::after {
+.util .lang .lang__btn::after {
   content: "\f107";
   font-family: "Line Awesome Free";
   font-weight: 900;
@@ -3437,6 +3437,10 @@ input[type=checkbox] {
 }
 
 #nav-all {
+  display: none;
+}
+#nav-all.active {
+  display: block;
   padding: 20px;
   z-index: 5000;
   position: fixed;
@@ -3450,11 +3454,11 @@ input[type=checkbox] {
           backdrop-filter: blur(10px);
 }
 @media (min-width: 1024px) {
-  #nav-all {
+  #nav-all.active {
     padding: 30px;
   }
 }
-#nav-all .close::after {
+#nav-all.active .close::after {
   content: "\f057";
   font-family: "Line Awesome Free";
   font-weight: 900;

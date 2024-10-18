@@ -61,6 +61,7 @@
         .gnb__depth2 {
             display: block;
         }
+        // depth2 뒷배경
         &::before {
             display: block;
         }
@@ -94,7 +95,7 @@
             width: 160px;
             height: 51px;
             display: block;
-            // 순서 잘못되면 안먹힘
+            // url 순서 잘못되면 안먹힘
             background: url(../../../resources/images/pattern/common/logo.png) no-repeat 0 0;
             background-size: contain;
             transform: scale(0.8);
@@ -244,13 +245,14 @@
             height: 57px;
             margin-right: 10px;
             font-size: 2rem;
+            &::after {
+                content: "\f107";
+                @include lineAwesome;
+                margin-left: 5px;
+                color: $gray-50;
+            }
         }
-        &::after {
-            content: "\f107";
-            @include lineAwesome;
-            margin-left: 5px;
-            color: $gray-50;
-        }
+
         &__lst {
             display: none;
             position: absolute;
@@ -286,26 +288,30 @@
 }
 
 #nav-all {
-    padding: $p-mobile;
-    @include tabletMore {
-        padding: $p-tablet;
-    }
-    z-index: 5000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba($color: $white, $alpha: 0.9);
-    // 뒷배경 블러처리하기
-    backdrop-filter: blur(10px);
+    display: none;
+    &.active {
+        display: block;
+        padding: $p-mobile;
+        @include tabletMore {
+            padding: $p-tablet;
+        }
+        z-index: 5000;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba($color: $white, $alpha: 0.9);
+        // 뒷배경 블러처리하기
+        backdrop-filter: blur(10px);
 
-    .close {
-        &::after {
-            content: "\f057";
-            @include lineAwesome;
-            font-size: 4rem;
+        .close {
+            &::after {
+                content: "\f057";
+                @include lineAwesome;
+                font-size: 4rem;
+            }
         }
     }
 }

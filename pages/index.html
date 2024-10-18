@@ -25,8 +25,14 @@
     <!-- css -->
     <link rel="stylesheet" href="../resources/css/style.css">
 
+    <!-- jquery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
     <!-- js -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script defer src="../resources/js/pattern/ui-swiper.js"></script>
+    <script defer src="../resources/js/pattern/ui-pattern-script.js"></script>
+
 </head>
 
 <body>
@@ -100,8 +106,8 @@
                     <div class="lang active">
                         <button class="lang__btn">kor</button>
                         <ul class="lang__lst">
-                            <li>kor</li>
-                            <li>eng</li>
+                            <li><a href="#">kor</a></li>
+                            <li><a href="#">eng</a></li>
                         </ul>
                     </div>
                     <button class="search">
@@ -343,53 +349,6 @@
         </main>
         <footer id="footer">footer</footer>
     </div>
-
-    <script>
-        var swiper = new Swiper(".slide-intro", {
-            slidesPerView: 1,
-            spaceBetween: 10,
-            effect: "fade",
-            loop: true,
-            autoplay: true,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            // breakpoints: {
-            //     640: {
-            //         slidesPerView: 2,
-            //         spaceBetween: 20,
-            //     },
-            //     768: {
-            //         slidesPerView: 4,
-            //         spaceBetween: 40,
-            //     },
-            //     1024: {
-            //         slidesPerView: 5,
-            //         spaceBetween: 50,
-            //     },
-            // },
-        });
-        var swiper = new Swiper(".slide-studio", {
-            // 모바일기준 1개
-            slidesPerView: 1,
-            spaceBetween: 20,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            breakpoints: {
-                640: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                },
-                1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 50,
-                },
-            },
-        });
-    </script>
 </body>
 
 </html>
