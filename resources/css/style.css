@@ -3235,10 +3235,11 @@ input[type=checkbox] {
   background-color: #fff;
 }
 #header.active .gnb__depth2 {
-  display: block;
+  height: 218px;
+  padding: 20px 0;
 }
 #header.active::before {
-  display: block;
+  height: 218px;
 }
 #header .inner {
   display: flex;
@@ -3282,14 +3283,14 @@ input[type=checkbox] {
   border: 0 !important;
 }
 #header::before {
-  display: none;
   content: "";
   position: absolute;
   top: 102px;
   left: 0;
   width: 100%;
-  height: 210px;
+  height: 0px;
   background-color: #f0f0f0;
+  transition: all 0.4s;
 }
 
 #gnb {
@@ -3346,13 +3347,15 @@ input[type=checkbox] {
   background-color: #e4e4e4;
 }
 #gnb .gnb__depth2 {
-  display: none;
   background: #f0f0f0;
   position: absolute;
   top: 102px;
   left: 0;
   width: 100%;
-  padding: 20px 0;
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+  transition: 0.4s;
 }
 #gnb .gnb__depth2::after {
   content: "";
