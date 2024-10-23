@@ -3439,33 +3439,90 @@ input[type=checkbox] {
   font-size: 3rem;
 }
 
-#nav-all {
+.nav-all__wrap {
   display: none;
+  background-color: #717171;
 }
-#nav-all.active {
+.nav-all__wrap.active {
+  position: relative;
   display: block;
-  padding: 20px;
-  z-index: 5000;
+  width: 100vw;
+  height: 100vh;
+  background-color: #e4e4e4;
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
+}
+.nav-all__wrap #nav-all {
+  display: none;
+}
+.nav-all__wrap #nav-all.active {
+  display: block;
+  padding: 30px;
+  z-index: 5000;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.9);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  height: 520px;
+  background: #fff;
+  border-radius: 0 0 20px 20px;
 }
 @media (min-width: 1024px) {
-  #nav-all.active {
+  .nav-all__wrap #nav-all.active {
     padding: 30px;
+    width: 100%;
+    height: 100%;
   }
 }
-#nav-all.active .close::after {
+.nav-all__wrap #nav-all.active .close {
+  position: absolute;
+  top: 2%;
+  left: 85%;
+}
+.nav-all__wrap #nav-all.active .close::after {
   content: "\f057";
   font-family: "Line Awesome Free";
   font-weight: 900;
   font-size: 4rem;
+}
+.nav-all__wrap #nav-all.active .gnb__depth1 {
+  padding-top: 2%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.nav-all__wrap #nav-all.active .gnb__depth1 > li {
+  margin-bottom: 20px;
+  width: 50%;
+}
+.nav-all__wrap #nav-all.active .gnb__depth1 > li > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 0 1vw;
+  font-weight: bold;
+  background-color: pink;
+}
+.nav-all__wrap #nav-all.active .gnb__depth1 > li > a span {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.nav-all__wrap #nav-all.active .gnb__depth2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.nav-all__wrap #nav-all.active .gnb__depth2 a {
+  display: block;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 10px 0;
+  color: #555555;
 }
 
 :root {
